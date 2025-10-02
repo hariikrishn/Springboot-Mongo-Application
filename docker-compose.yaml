@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   springboot:
-    image: $ECR_REGISTRY/$ECR_REPO_NAME:$IMAGE_TAG
+    image: ${ECR_REGISTRY}/${ECR_REPO_NAME}:${IMAGE_TAG}
     restart: always #This Will be Ignored If We Deploy in Docker Swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -44,3 +44,4 @@ networks:
   springappnetwork:
 
     external: true
+
